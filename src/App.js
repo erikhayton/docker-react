@@ -10,7 +10,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             {/* Edit <code>src/App.js</code> and save to reload. */}
-            New update pushed to app.js!
+            Changed on the feature branch to prove the Travis/AWS integration!
           </p>
           <a
             className="App-link"
