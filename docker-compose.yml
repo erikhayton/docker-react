@@ -1,0 +1,23 @@
+# Use docker-compose so that you don't have to run a string like: 
+# "docker run -p 3000:300
+# 0 -v /app/node_modules -v $(pwd):/app 44e961f6122e"
+
+version: '3'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
